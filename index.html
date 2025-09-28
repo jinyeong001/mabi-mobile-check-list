@@ -2,19 +2,43 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
-  <title>오늘의 물물교환 체크리스트</title>
+  <title>오늘의 체크리스트</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div class="container">
-    <h1>오늘의 물물교환 체크리스트</h1>
-    <p class="reset-note">*매일 오전 6시에 자동으로 리셋됩니다</p>
-    <ul id="checklist">
-      <li><label><input type="checkbox"> 캐시샵 매일 무료 상품</label></li>
-      <li><label><input type="checkbox"> 요일 던전</label></li>
-      <li><label><input type="checkbox"> 지방/심층으로 돌린 검은 구멍</label></li>
-      <li><label><input type="checkbox"> 불길한 소환의 결계</label></li>
-    </ul>
+    <div class="header">
+      <h1 class="toggle-title">오늘의 숙제</h1>
+      <button id="resetBtn" title="새로고침">🔄</button>
+    </div>
+    <div id="checklistSection" class="collapsed">
+      <table>
+        <thead>
+          <tr>
+            <th>할 일</th>
+            <th>체크</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>캐시샵 매일 무료 상품</td>
+            <td><input type="checkbox" /></td>
+          </tr>
+          <tr>
+            <td>요일 던전</td>
+            <td><input type="checkbox" /></td>
+          </tr>
+          <tr>
+            <td>지방/심층으로 돌린 검은 구멍</td>
+            <td><input type="checkbox" /></td>
+          </tr>
+          <tr>
+            <td>불길한 소환의 결계</td>
+            <td><input type="checkbox" /></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </div>
   <script src="script.js"></script>
 </body>
