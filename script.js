@@ -4,27 +4,29 @@ function loadChecklist(tableId) {
   const saved = JSON.parse(localStorage.getItem(tableId)) || {};
 
   checkboxes.forEach((box, index) => {
-    const row = box.closest('tr');
     box.checked = saved[index] || false;
-    if (box.checked) row.classList.add('checked-row');
+  });
 
+  updateRowHighlight(tableId);
+
+  checkboxes.forEach((box, index) => {
     box.addEventListener('change', () => {
       saved[index] = box.checked;
       localStorage.setItem(tableId, JSON.stringify(saved));
-      row.classList.toggle('checked-row', box.checked);
+      updateRowHighlight(tableId);
     });
   });
 }
+
 
 function resetChecklist(tableId) {
   const table = document.getElementById(tableId);
   const checkboxes = table.querySelectorAll('input[type="checkbox"]');
   checkboxes.forEach(box => {
     box.checked = false;
-    const row = box.closest('tr');
-    row.classList.remove('checked-row');
   });
   localStorage.setItem(tableId, JSON.stringify({}));
+  updateRowHighlight(tableId);
 }
 
 function resetAll() {
@@ -48,8 +50,18 @@ function toggleAllSections() {
   });
 }
 
+function updateRowHighlight(tableId) {
+  const rows = document.querySelectorAll(`#${tableId} tbody tr`);
 
-// 초기 로딩: 모든 테이블에 대해 체크박스 상태 불러오기
+  rows.forEach(row => {
+    const checkboxes = row.querySelectorAll('input[type="checkbox"]');
+    const allChecked = checkboxes.length > 0 &&
+                       Array.from(checkboxes).every(cb => cb.checked);
+
+    row.classList.toggle('checked-row', allChecked);
+  });
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('table').forEach(table => {
     loadChecklist(table.id);
