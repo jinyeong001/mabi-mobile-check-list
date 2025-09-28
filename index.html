@@ -8,6 +8,9 @@
 <body>
   <div class="container">
 
+    <!-- ✅ 사이트 타이틀 -->
+    <h1 class="site-title">마비노기 모바일 체크 리스트</h1>
+
     <!-- ✅ 일일 할일 -->
     <div class="section">
       <div class="section-header">
@@ -231,6 +234,64 @@
     </div>
     </div>
   
+    <!-- ✅ 사냥터 -->
+    <div class="subsection">
+      <div class="section-header" onclick="toggleSection('exTableSection')">
+        <h2>사냥터</h2>
+      </div>
+      <div id="exTableSection" class="section-content">
+      <table id="exTable" class="trade-table">
+        <thead>
+          <tr>
+            <th>NPC</th><th>교환 아이템</th><th>개수</th><th>요구 재료</th><th>재료 개수</th><th>교환 횟수</th><th>총 요구 재료</th><th>체크</th>
+          </tr>
+        </thead>
+          <tbody>
+            <!-- 두갈드아일 -->
+            <tr><td colspan="9" class="region-header">두갈드아일</td></tr>
+
+            <!-- 엘빈 -->
+            <tr>
+              <td rowspan="4">엘빈</td><td>타닌 가루</td><td>5</td><td>생가죽</td><td>5</td><td>10</td><td>50</td><td><input type="checkbox" /></td>
+            </tr>
+            <tr><td>상급 통나무</td><td>1</td><td>상급 가죽</td><td>1</td><td>10</td><td>10</td><td><input type="checkbox" /></td></tr>
+            <tr><td>상급 목재</td><td>1</td><td>야채 볶음</td><td>1</td><td>2</td><td>2</td><td><input type="checkbox" /></td></tr>
+            <tr><td>가죽 가공 시설 설계도 (3레벨)</td><td>1</td><td>옷감+</td><td>5</td><td>1</td><td>5</td><td><input type="checkbox" /></td></tr>
+
+            <!-- 트레이시 -->
+            <tr>
+              <td rowspan="5">트레이시</td><td>생가죽</td><td>5</td><td>통나무</td><td>5</td><td>10</td><td>50</td><td><input type="checkbox" /></td>
+            </tr>
+            <tr><td>상급 생가죽</td><td>1</td><td>통나무</td><td>10</td><td>10</td><td>100</td><td><input type="checkbox" /></td></tr>
+            <tr><td>나무 진액</td><td>4</td><td>상급 통나무</td><td>1</td><td>5</td><td>5</td><td><input type="checkbox" /></td></tr>
+            <tr><td>트레이시의 원목 오르골</td><td>1</td><td>조개찜</td><td>2</td><td>1</td><td>2</td><td><input type="checkbox" /></td></tr>
+            <tr><td>목재 가공 시설 설계도 (3레벨)</td><td>1</td><td>애벌레</td><td>5</td><td>1</td><td>5</td><td><input type="checkbox" /></td></tr>
+
+            <!-- 얼음협곡 -->
+            <tr><td colspan="9" class="region-header">얼음협곡</td></tr>
+            <tr>
+              <td>카린</td><td>펫 먹이</td><td>10</td><td>감자수프</td><td>3</td><td>1</td><td>3</td><td><input type="checkbox" /></td>
+            </tr>
+
+            <!-- 가이레흐 언덕 -->
+            <tr><td colspan="9" class="region-header">가이레흐 언덕</td></tr>
+            <tr>
+              <td rowspan="2">셰이머스</td><td>고풍스러운 포장지</td><td>1</td><td>물이 든 병</td><td>10</td><td>3</td><td>30</td><td><input type="checkbox" /></td>
+            </tr>
+            <tr><td>뛰어난 붕대</td><td>5</td><td>샤와르마</td><td>1</td><td>3</td><td>3</td><td><input type="checkbox" /></td></tr>
+
+            <!-- 센마이 평원 -->
+            <tr><td colspan="9" class="region-header">센마이 평원</td></tr>
+            <tr>
+              <td rowspan="3">일레인</td><td>가죽+</td><td>3</td><td>운철 광석</td><td>100</td><td>1</td><td>100</td><td><input type="checkbox" /></td>
+            </tr>
+            <tr><td>부드러운 통나무</td><td>3</td><td>최상급 통나무+</td><td>100</td><td>1</td><td>100</td><td><input type="checkbox" /></td></tr>
+            <tr><td>단단한 통나무</td><td>3</td><td>최상급 통나무+</td><td>100</td><td>1</td><td>100</td><td><input type="checkbox" /></td></tr>
+          </tbody>
+      </table>
+    </div>
+    </div>
+
   <footer class="page-footer">
   Made by 진영씨 (알리사 서버 · 일탈 길드)
   </footer>
