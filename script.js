@@ -19,7 +19,11 @@ function loadChecklist(tableId) {
 function resetChecklist(tableId) {
   const table = document.getElementById(tableId);
   const checkboxes = table.querySelectorAll('input[type="checkbox"]');
-  checkboxes.forEach(box => box.checked = false);
+  checkboxes.forEach(box => {
+    box.checked = false;
+    const row = box.closest('tr');
+    row.classList.remove('checked-row');
+  });
   localStorage.setItem(tableId, JSON.stringify({}));
 }
 
