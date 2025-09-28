@@ -14,13 +14,13 @@
     <!-- ✅ 일일 할일 -->
     <div class="section">
       <div class="section-header">
-        <h2>📌 일일 할일</h2>
+        <h2>📌 일일 체크 리스트</h2>
         <button class="reset-btn" onclick="resetChecklist('dailyTodoTable');">♻️</button>
       </div>
       <table id="dailyTodoTable" class="trade-table">
         <thead>
           <tr>
-            <th>할일</th>
+            <th>일일</th>
             <th>체크</th>
           </tr>
         </thead>
@@ -35,6 +35,34 @@
               <label><input type="checkbox"> 1회</label>
               <label><input type="checkbox"> 2회</label>
               <label><input type="checkbox"> 3회</label>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- ✅ 마비노기 목표 -->
+    <div class="section">
+      <div class="section-header">
+        <h2>📌 추천 목표</h2>
+        <button class="reset-btn" onclick="resetChecklist('mabiTodoTable');">♻️</button>
+      </div>
+      <table id="mabiTodoTable" class="trade-table">
+        <thead>
+          <tr>
+            <th>목표</th>
+            <th>체크</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>전설 펫 맞추기</td><td><input type="checkbox" /></td></tr>
+          <tr>
+            <td>전설 아바타 맞추기</td>
+            <td>
+              <label><input type="checkbox"> 모자</label>
+              <label><input type="checkbox"> 상의</label>
+              <label><input type="checkbox"> 장갑</label>
+              <label><input type="checkbox"> 신발</label>
             </td>
           </tr>
         </tbody>
