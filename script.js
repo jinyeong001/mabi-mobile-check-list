@@ -28,9 +28,14 @@ function resetChecklist(tableId) {
 }
 
 function resetAll() {
-  const tables = document.querySelectorAll('table');
-  tables.forEach(table => {
+  // 모든 테이블 체크박스 초기화
+  document.querySelectorAll('table').forEach(table => {
     resetChecklist(table.id);
+  });
+
+  // 모든 섹션 접기
+  document.querySelectorAll('.section-content').forEach(section => {
+    section.style.display = 'none';
   });
 }
 
