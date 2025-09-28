@@ -45,10 +45,14 @@ function toggleSection(id) {
 }
 
 function toggleAllSections() {
-  document.querySelectorAll('.section-content').forEach(section => {
-    section.style.display = 'block';
+  const sections = document.querySelectorAll('.section-content');
+  const allOpen = Array.from(sections).every(section => section.style.display === 'block');
+
+  sections.forEach(section => {
+    section.style.display = allOpen ? 'none' : 'block';
   });
 }
+
 
 // 초기 로딩: 모든 테이블에 대해 체크박스 상태 불러오기
 document.addEventListener('DOMContentLoaded', () => {
