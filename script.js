@@ -1,24 +1,49 @@
-const checklistSection = document.getElementById('checklistSection');
-const toggleTitle = document.querySelector('.toggle-title');
-const resetBtn = document.getElementById('resetBtn');
-const checkboxes = document.querySelectorAll('input[type="checkbox"]');
-const STORAGE_KEY = 'darkChecklist';
+function loadChecklist(tableId) {
+  const table = document.getElementById(tableId);
+  const checkboxes = table.querySelectorAll('input[type="checkbox"]');
+  const saved = JSON.parse(localStorage.getItem(tableId)) || {};
 
-toggleTitle.addEventListener('click', () => {
-  checklistSection.classList.toggle('collapsed');
-});
+  checkboxes.forEach((box, index) => {
+    const row = box.closest('tr');
+    box.checked = saved[index] || false;
+    if (box.checked) row.classList.add('checked-row');
 
-checkboxes.forEach((box, index) => {
-  const saved = JSON.parse(localStorage.getItem(STORAGE_KEY)) || {};
-  box.checked = saved[index] || false;
-
-  box.addEventListener('change', () => {
-    saved[index] = box.checked;
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(saved));
+    box.addEventListener('change', () => {
+      saved[index] = box.checked;
+      localStorage.setItem(tableId, JSON.stringify(saved));
+      row.classList.toggle('checked-row', box.checked);
+    });
   });
-});
+}
 
-resetBtn.addEventListener('click', () => {
+function resetChecklist(tableId) {
+  const table = document.getElementById(tableId);
+  const checkboxes = table.querySelectorAll('input[type="checkbox"]');
   checkboxes.forEach(box => box.checked = false);
-  localStorage.setItem(STORAGE_KEY, JSON.stringify({}));
+  localStorage.setItem(tableId, JSON.stringify({}));
+}
+
+function resetAll() {
+  const tables = document.querySelectorAll('table');
+  tables.forEach(table => {
+    resetChecklist(table.id);
+  });
+}
+
+function toggleSection(id) {
+  const section = document.getElementById(id);
+  section.style.display = section.style.display === 'none' ? 'block' : 'none';
+}
+
+function toggleAllSections() {
+  document.querySelectorAll('.section-content').forEach(section => {
+    section.style.display = 'block';
+  });
+}
+
+// 초기 로딩: 모든 테이블에 대해 체크박스 상태 불러오기
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('table').forEach(table => {
+    loadChecklist(table.id);
+  });
 });
