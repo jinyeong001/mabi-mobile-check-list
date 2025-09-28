@@ -8,74 +8,14 @@
 <body>
   <div class="container">
     <h1>오늘의 물물교환 체크리스트</h1>
-    <p class="subtitle">*매일 오전 6시에 자동으로 리셋됩니다.</p>
-
-    <!-- 일일 숙제 -->
-    <section class="checklist-section">
-      <div class="section-header">
-        <h2>📌 오늘의 숙제</h2>
-        <button class="reset-btn" data-target="daily">리셋</button>
-      </div>
-      <details open>
-        <summary>접기/펼치기</summary>
-        <ul>
-          <li><input type="checkbox" class="daily-checkbox" id="daily1"> 캐시샵 매일 무료 상품</li>
-          <li><input type="checkbox" class="daily-checkbox" id="daily2"> 요일 던전</li>
-        </ul>
-      </details>
-    </section>
-
-    <!-- 일일 물물 교환 -->
-    <section class="checklist-section">
-      <div class="section-header">
-        <h2>📌 일일 물물 교환</h2>
-        <button class="reset-btn" data-target="daily">리셋</button>
-      </div>
-      <details>
-        <summary>접기/펼치기</summary>
-        <table>
-          <tr>
-            <th>주는 물품</th><th>받는 물품</th><th>제한</th><th>교환</th>
-          </tr>
-          <tr>
-            <td>케이틴 특제 통밀빵 1개</td>
-            <td>성수 1개</td>
-            <td>일 1회</td>
-            <td><input type="checkbox" class="daily-checkbox" id="npc1"></td>
-          </tr>
-          <tr>
-            <td>케이틴 특제 통밀빵 10개</td>
-            <td>성수 10개</td>
-            <td>일 1회</td>
-            <td><input type="checkbox" class="daily-checkbox" id="npc2"></td>
-          </tr>
-        </table>
-      </details>
-    </section>
-
-    <!-- 주간 물물 교환 -->
-    <section class="checklist-section">
-      <div class="section-header">
-        <h2>📌 주간 물물 교환</h2>
-        <button class="reset-btn" data-target="weekly">리셋</button>
-      </div>
-      <details>
-        <summary>접기/펼치기</summary>
-        <table>
-          <tr>
-            <th>주는 물품</th><th>받는 물품</th><th>제한</th><th>교환</th>
-          </tr>
-          <tr>
-            <td>우유 10개</td>
-            <td>케이틴 특제 통밀빵 3개</td>
-            <td>주 1회</td>
-            <td><input type="checkbox" class="weekly-checkbox" id="weekly1"></td>
-          </tr>
-        </table>
-      </details>
-    </section>
+    <p class="reset-note">*매일 오전 6시에 자동으로 리셋됩니다</p>
+    <ul id="checklist">
+      <li><label><input type="checkbox"> 캐시샵 매일 무료 상품</label></li>
+      <li><label><input type="checkbox"> 요일 던전</label></li>
+      <li><label><input type="checkbox"> 지방/심층으로 돌린 검은 구멍</label></li>
+      <li><label><input type="checkbox"> 불길한 소환의 결계</label></li>
+    </ul>
   </div>
-
   <script src="script.js"></script>
 </body>
 </html>
