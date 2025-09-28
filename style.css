@@ -46,6 +46,11 @@ body {
   margin-bottom: 30px;
 }
 
+.section {
+  margin-bottom: 30px;
+}
+
+
 /* 테이블 스타일 */
 .trade-table {
   width: 100%;
@@ -56,9 +61,14 @@ body {
 .trade-table th,
 .trade-table td {
   border: 1px solid #ccc;
-  padding: 8px;
-  text-align: center;
+  padding: 10px;
   font-size: 0.95em;
+  text-align: center;
+}
+
+.trade-table td label {
+  margin-right: 10px;
+  white-space: nowrap;
 }
 
 .trade-table th {
@@ -72,5 +82,29 @@ input[type="checkbox"] {
 }
 
 .checked-row {
-  background-color: #d0e7ff; /* 연한 파란색 */
+  background-color: #d0e7ff;
+}
+
+.daily-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.daily-table th,
+.daily-table td {
+  border: 1px solid #ccc;
+  padding: 10px;
+  font-size: 1em;
+  text-align: left;
+}
+
+.daily-table td:last-child {
+  text-align: center;
+}
+
+.subsection {
+  margin-top: 20px;
+  padding-left: 10px;
+  border-left: 3px solid #cce;
 }
