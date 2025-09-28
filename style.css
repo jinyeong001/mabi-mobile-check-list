@@ -5,6 +5,14 @@ body {
   padding: 20px;
 }
 
+.site-title {
+  text-align: center;
+  font-size: 2em;
+  font-weight: bold;
+  margin-bottom: 30px;
+  color: #222;
+}
+
 .container {
   max-width: 1000px;
   margin: auto;
@@ -118,4 +126,13 @@ input[type="checkbox"] {
   margin-top: 40px;
   padding-top: 20px;
   border-top: 1px solid #ddd;
+}
+
+.region-header {
+  background-color: #f0f0f0;
+  font-weight: bold;
+  text-align: center;
+  padding: 12px;
+  border: 1px solid #ccc;
+  font-size: 1em;
 }
