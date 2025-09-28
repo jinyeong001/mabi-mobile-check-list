@@ -2,44 +2,204 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
-  <title>오늘의 체크리스트</title>
+  <title>마비노기 모바일 체크리스트</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div class="container">
-    <div class="header">
-      <h1 class="toggle-title">오늘의 숙제</h1>
-      <button id="resetBtn" title="새로고침">🔄</button>
+
+    <!-- ✅ 상단 제목 + 전체 리셋 버튼 -->
+    <div class="section-header" onclick="toggleAllSections()">
+      <h2>💱 일일 물물 교환 리스트</h2>
+      <button class="reset-btn" onclick="resetAll(); event.stopPropagation();">🔄</button>
     </div>
-    <div id="checklistSection" class="collapsed">
-      <table>
+
+    <!-- ✅ 티르코네일 -->
+    <div class="section">
+      <div class="section-header" onclick="toggleSection('tirTableSection')">
+        <h2>티르코네일</h2>
+      </div>
+       <div id="tirTableSection" class="section-content">
+          <table id="tirTable" class="trade-table">
+            <thead>
+              <tr>
+                <th>NPC</th><th>교환 아이템</th><th>개수</th><th>요구 재료</th><th>재료 개수</th><th>교환 횟수</th><th>총 요구 재료</th><th>체크</th>
+              </tr>
+            </thead>
+              <tbody>
+                <tr><td rowspan="1">데이안</td><td>상급양털</td><td>4</td><td>펫먹이</td><td>1</td><td>10</td><td>10</td><td><input type="checkbox" /></td></tr>
+                <tr><td rowspan="1">딜리스</td><td>네잎클로버</td><td>1</td><td>쑥쑥 버섯</td><td>3</td><td>1</td><td>3</td><td><input type="checkbox" /></td></tr>
+                <tr><td rowspan="3">라사</td><td>고급 연금술 재연소 촉매</td><td>1</td><td>사과주스</td><td>1</td><td>1</td><td>1</td><td><input type="checkbox" /></td></tr>
+                <tr><td>고급 연금술 재연소 촉매</td><td>1</td><td>연금술 부스러기</td><td>3</td><td>1</td><td>3</td><td><input type="checkbox" /></td></tr>
+                <tr><td>레어 연금술 재연소 촉매</td><td>1</td><td>고급 연금술 재연소 촉매</td><td>15</td><td>1</td><td>15</td><td><input type="checkbox" /></td></tr>
+                <tr><td rowspan="1">레이널드</td><td>치명타 비약</td><td>1</td><td>마요네즈 고기볶음</td><td>2</td><td>1</td><td>2</td><td><input type="checkbox" /></td></tr>
+                <tr><td rowspan="1">메이븐</td><td>성수</td><td>1</td><td>케이튼 특제 통밀빵</td><td>1</td><td>1</td><td>1</td><td><input type="checkbox" /></td></tr>
+                <tr><td rowspan="3">말콤</td><td>빈 악보</td><td>1</td><td>양털</td><td>50</td><td>1</td><td>50</td><td><input type="checkbox" /></td></tr>
+                <tr><td>말콤의 푹신한 양털 베개</td><td>1</td><td>거미줄</td><td>5</td><td>1</td><td>5</td><td><input type="checkbox" /></td></tr>
+                <tr><td>다목적 제작대 설계도(3레벨)</td><td>1</td><td>전문 캠프파이어 키트</td><td>1</td><td>1</td><td>1</td><td><input type="checkbox" /></td></tr>
+                <tr><td rowspan="4">알리사</td><td>연금술 부스러기</td><td>1</td><td>달걀</td><td>10</td><td>1</td><td>10</td><td><input type="checkbox" /></td></tr>
+                <tr><td>연금술 부스러기</td><td>1</td><td>라벤더 꽃</td><td>1</td><td>1</td><td>1</td><td><input type="checkbox" /></td></tr>
+                <tr><td>밀가루</td><td>1</td><td>달걀</td><td>3</td><td>1</td><td>3</td><td><input type="checkbox" /></td></tr>
+                <tr><td>밀가루</td><td>1</td><td>라벤더 꽃</td><td>1</td><td>1</td><td>1</td><td><input type="checkbox" /></td></tr>
+                <tr><td rowspan="1">엔델리온</td><td>성수</td><td>10</td><td>케이틴 특제 통밀빵</td><td>10</td><td>1</td><td>10</td><td><input type="checkbox" /></td></tr>
+                <tr><td rowspan="2">케이틴</td><td>케이틴 특제 통밀빵</td><td>3</td><td>우유</td><td>10</td><td>1</td><td>10</td><td><input type="checkbox" /></td></tr>
+                <tr><td>식재료 가공 시설 설계도(3레벨)</td><td>1</td><td>밀가루</td><td>10</td><td>1</td><td>10</td><td><input type="checkbox" /></td></tr>
+                <tr><td rowspan="1">노라</td><td>여행자 간식</td><td>1</td><td>말콤의 푹신한 양털 베개</td><td>1</td><td>3</td><td>3</td><td><input type="checkbox" /></td></tr>
+                <tr><td rowspan="4">퍼거스</td><td>철 광석</td><td>1</td><td>분해된 장비 부품</td><td>1</td><td>10</td><td>10</td><td><input type="checkbox" /></td></tr>
+                <tr><td>석탄</td><td>3</td><td>분해된 장비 부품</td><td>1</td><td>10</td><td>10</td><td><input type="checkbox" /></td></tr>
+                <tr><td>합금강괴</td><td>1</td><td>강철괴</td><td>2</td><td>4</td><td>8</td><td><input type="checkbox" /></td></tr>
+                <tr><td>분해된 장비 부품</td><td>10</td><td>광석</td><td>100</td><td>1</td><td>100</td><td><input type="checkbox" /></td></tr>
+              </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- ✅ 던바튼 -->
+    <div class="section">
+      <div class="section-header" onclick="toggleSection('dunbartonTableSection')">
+        <h2>던바튼</h2>
+      </div>
+      <div id="dunbartonTableSection" class="section-content">
+      <table id="dunbartonTable" class="trade-table">
         <thead>
           <tr>
-            <th>할 일</th>
-            <th>체크</th>
+            <th>NPC</th><th>교환 아이템</th><th>개수</th><th>요구 재료</th><th>재료 개수</th><th>교환 횟수</th><th>총 요구 재료</th><th>체크</th>
           </tr>
         </thead>
-        <tbody>
-          <tr>
-            <td>캐시샵 매일 무료 상품</td>
-            <td><input type="checkbox" /></td>
-          </tr>
-          <tr>
-            <td>요일 던전</td>
-            <td><input type="checkbox" /></td>
-          </tr>
-          <tr>
-            <td>지방/심층으로 돌린 검은 구멍</td>
-            <td><input type="checkbox" /></td>
-          </tr>
-          <tr>
-            <td>불길한 소환의 결계</td>
-            <td><input type="checkbox" /></td>
-          </tr>
-        </tbody>
+          <tbody>
+            <tr><td rowspan="3">글리니스</td><td>글리니스 수제 케이크</td><td>1</td><td>포크 인 밀크</td><td>1</td><td>1</td><td>1</td><td><input type="checkbox" /></td></tr>
+            <tr><td>글리니스의 애플 밀크티</td><td>1</td><td>생크림</td><td>4</td><td>1</td><td>4</td><td><input type="checkbox" /></td></tr>
+            <tr><td>음식 제작대 설계도 (3레벨)</td><td>1</td><td>사과 수플레</td><td>1</td><td>1</td><td>1</td><td><input type="checkbox" /></td></tr>
+            <tr><td rowspan="2">네리스</td><td>상급 생가죽</td><td>1</td><td>동 광석</td><td>1</td><td>10</td><td>10</td><td><input type="checkbox" /></td></tr>
+            <tr><td>특수강괴</td><td>1</td><td>합금강괴</td><td>2</td><td>4</td><td>8</td><td><input type="checkbox" /></td></tr>
+            <tr><td>마누스</td><td>생명의 마나석</td><td>1</td><td>펫 먹이</td><td>10</td><td>2</td><td>20</td><td><input type="checkbox" /></td></tr>
+            <tr><td rowspan="6">발터</td><td>상급 목재</td><td>16</td><td>트레이시의 원목 오르골</td><td>1</td><td>2</td><td>2</td><td><input type="checkbox" /></td></tr>
+            <tr><td>하트 토큰</td><td>1</td><td>참사랑어</td><td>5</td><td>2</td><td>10</td><td><input type="checkbox" /></td></tr>
+            <tr><td>화염 마법 유탄</td><td>1</td><td>어둠 유령 고기</td><td>5</td><td>3</td><td>15</td><td><input type="checkbox" /></td></tr>
+            <tr><td>번개 마법 유탄</td><td>1</td><td>어둠 유령 고기</td><td>5</td><td>3</td><td>15</td><td><input type="checkbox" /></td></tr>
+            <tr><td>바람 마법 유탄</td><td>1</td><td>어둠 유령 고기</td><td>5</td><td>3</td><td>15</td><td><input type="checkbox" /></td></tr>
+            <tr><td>산성 마법 유탄</td><td>1</td><td>어둠 유령 고기</td><td>5</td><td>3</td><td>15</td><td><input type="checkbox" /></td></tr>
+            <tr><td rowspan="5">스튜어트</td><td>불꽃의 결정</td><td>1</td><td>연금술 부스러기</td><td>1</td><td>5</td><td>5</td><td><input type="checkbox" /></td></tr>
+            <tr><td>얼음의 결정</td><td>1</td><td>연금술 부스러기</td><td>1</td><td>5</td><td>5</td><td><input type="checkbox" /></td></tr>
+            <tr><td>전기의 결정</td><td>1</td><td>연금술 부스러기</td><td>1</td><td>5</td><td>5</td><td><input type="checkbox" /></td></tr>
+            <tr><td>광휘의 결정</td><td>1</td><td>연금술 부스러기</td><td>1</td><td>5</td><td>5</td><td><input type="checkbox" /></td></tr>
+            <tr><td>봉인의 결정</td><td>1</td><td>연금술 부스러기</td><td>1</td><td>5</td><td>5</td><td><input type="checkbox" /></td></tr>
+            <tr><td rowspan="3">시몬</td><td>염색약 베이스</td><td>3</td><td>상급 실크</td><td>10</td><td>1</td><td>10</td><td><input type="checkbox" /></td></tr>
+            <tr><td>옷감 가공 시설 설계도 (3레벨)</td><td>1</td><td>유령 반딧불이</td><td>2</td><td>1</td><td>2</td><td><input type="checkbox" /></td></tr>
+            <tr><td>방어구 제작대 설계도 (3레벨)</td><td>1</td><td>세공된 페리도트S</td><td>1</td><td>1</td><td>1</td><td><input type="checkbox" /></td></tr>
+            <tr><td rowspan="2">아란웰</td><td>궁극기 비약</td><td>1</td><td>감자 샐러드</td><td>2</td><td>1</td><td>2</td><td><input type="checkbox" /></td></tr>
+            <tr><td>정령의 흔적</td><td>20</td><td>클래스 마스터 메달</td><td>1</td><td>1</td><td>1</td><td><input type="checkbox" /></td></tr>
+            <tr><td>아이라</td><td>종이</td><td>10</td><td>주인 없는 소설책</td><td>1</td><td>1</td><td>1</td><td><input type="checkbox" /></td></tr>
+            <tr><td rowspan="2">제롬</td><td>실크</td><td>4</td><td>리코타 치즈 샐러드</td><td>1</td><td>2</td><td>2</td><td><input type="checkbox" /></td></tr>
+            <tr><td>상급 실크</td><td>4</td><td>크림소스 스테이크</td><td>1</td><td>1</td><td>1</td><td><input type="checkbox" /></td></tr>
+            <tr><td rowspan="2">제이미</td><td>상급 옷감</td><td>4</td><td>사과 수플레</td><td>1</td><td>2</td><td>2</td><td><input type="checkbox" /></td></tr>
+            <tr><td>상급 옷감+</td><td>4</td><td>사과 생크림 케이크</td><td>1</td><td>1</td><td>1</td><td><input type="checkbox" /></td></tr>
+            <tr><td>칼릭스</td><td>상급 목재+</td><td>12</td><td>글리니스의 애플 밀크티</td><td>3</td><td>2</td><td>6</td><td><input type="checkbox" /></td></tr>
+            <tr><td>플로라</td><td>주인 없는 소설책</td><td>1</td><td>글리니스 수제 케이크</td><td>2</td><td>1</td><td>2</td><td><input type="checkbox" /></td></tr>
+          </tbody>
       </table>
     </div>
-  </div>
+    </div>
+
+    <!-- ✅ 콜헨 -->
+    <div class="section">
+      <div class="section-header" onclick="toggleSection('colhenTableSection')">
+        <h2>콜헨</h2>
+      </div>
+      <div id="colhenTableSection" class="section-content">
+      <table id="colhenTable" class="trade-table">
+        <thead>
+          <tr>
+            <th>NPC</th><th>교환 아이템</th><th>개수</th><th>요구 재료</th><th>재료 개수</th><th>교환 횟수</th><th>총 요구 재료</th><th>체크</th>
+          </tr>
+        </thead>
+          <tbody>
+            <tr><td rowspan="5">아르미스</td><td>은합금괴</td><td>1</td><td>특수강괴</td><td>2</td><td>1</td><td>2</td><td><input type="checkbox" /></td></tr>
+            <tr><td>동광석</td><td>10</td><td>백동 광석</td><td>1</td><td>1</td><td>1</td><td><input type="checkbox" /></td></tr>
+            <tr><td>금속 가공 시설 설계도 (3레벨)</td><td>1</td><td>석탄</td><td>20</td><td>1</td><td>20</td><td><input type="checkbox" /></td></tr>
+            <tr><td>무기 제작대 설계도 (3레벨)</td><td>1</td><td>내열 붕대</td><td>5</td><td>1</td><td>5</td><td><input type="checkbox" /></td></tr>
+            <tr><td>성수</td><td>10</td><td>저주 해제 물약 붕대</td><td>100</td><td>1</td><td>100</td><td><input type="checkbox" /></td></tr>
+            <tr><td rowspan="4">케아라</td><td>응축된 바람</td><td>3</td><td>상급 목재+</td><td>10</td><td>3</td><td>30</td><td><input type="checkbox" /></td></tr>
+            <tr><td>독주머니</td><td>3</td><td>상급 목재+</td><td>10</td><td>3</td><td>30</td><td><input type="checkbox" /></td></tr>
+            <tr><td>물이 든 병</td><td>50</td><td>성수</td><td>10</td><td>1</td><td>10</td><td><input type="checkbox" /></td></tr>
+            <tr><td>상급 치명타 비약</td><td>1</td><td>얼음 딸기주스</td><td>2</td><td>1</td><td>2</td><td><input type="checkbox" /></td></tr>
+            <tr><td rowspan="2">코너</td><td>네잎클로버</td><td>3</td><td>건강 드링크</td><td>1</td><td>3</td><td>3</td><td><input type="checkbox" /></td></tr>
+            <tr><td>폐허의 마나석</td><td>1</td><td>초롱아귀</td><td>5</td><td>3</td><td>15</td><td><input type="checkbox" /></td></tr>
+            <tr><td rowspan="4">킬리언</td><td>건강 드링크</td><td>1</td><td>깔끔 버섯 포자</td><td>5</td><td>5</td><td>25</td><td><input type="checkbox" /></td></tr>
+            <tr><td>네잎클로버</td><td>8</td><td>알리오 올리오</td><td>1</td><td>1</td><td>1</td><td><input type="checkbox" /></td></tr>
+            <tr><td>약품 가공 시설 설계도 (3레벨)</td><td>1</td><td>독주머니</td><td>3</td><td>1</td><td>3</td><td><input type="checkbox" /></td></tr>
+            <tr><td>약품 제작대 설계도 (3레벨)</td><td>1</td><td>석양나비</td><td>2</td><td>1</td><td>2</td><td><input type="checkbox" /></td></tr>
+          </tbody>
+      </table>
+    </div>
+    </div>
+
+    <!-- ✅ 반호르 -->
+    <div class="section">
+      <div class="section-header" onclick="toggleSection('banhornTableSection')">
+        <h2>반호르</h2>
+      </div>
+      <div id="banhornTableSection" class="section-content">
+      <table id="banhornTable" class="trade-table">
+        <thead>
+          <tr>
+            <th>NPC</th><th>교환 아이템</th><th>개수</th><th>요구 재료</th><th>재료 개수</th><th>교환 횟수</th><th>총 요구 재료</th><th>체크</th>
+          </tr>
+        </thead>
+          <tbody>
+            <tbody>
+              <tr><td>아이데른</td><td>은합금괴</td><td>10</td><td>농어 매운탕</td><td>1</td><td>1</td><td>1</td><td><input type="checkbox" /></td></tr>
+              <tr><td rowspan="2">에일렌</td><td>은합금괴</td><td>1</td><td>특수강괴</td><td>3</td><td>1</td><td>3</td><td><input type="checkbox" /></td></tr>
+              <tr><td>은합금괴</td><td>1</td><td>합금강괴</td><td>30</td><td>1</td><td>30</td><td><input type="checkbox" /></td></tr>
+              <tr><td rowspan="2">숀</td><td>물이 든 병</td><td>10</td><td>생채기꽃</td><td>10</td><td>1</td><td>10</td><td><input type="checkbox" /></td></tr>
+              <tr><td>정성이 담긴 꽃다발</td><td>1</td><td>고풍스러운 포장지</td><td>1</td><td>1</td><td>1</td><td><input type="checkbox" /></td></tr>
+              <tr><td>제니퍼</td><td>담백한 고기</td><td>15</td><td>콩</td><td>10</td><td>1</td><td>10</td><td><input type="checkbox" /></td></tr>
+              <tr><td>길모어</td><td>최상급 실크</td><td>5</td><td>최상급 목재</td><td>10</td><td>1</td><td>10</td><td><input type="checkbox" /></td></tr>
+              <tr><td>이비</td><td>낙엽 나방</td><td>10</td><td>정성이 담긴 꽃다발</td><td>1</td><td>1</td><td>1</td><td><input type="checkbox" /></td></tr>
+            </tbody>
+          </tbody>
+      </table>
+    </div>
+    </div>
+    
+    <!-- ✅ 이멘마하 -->
+    <div class="section">
+      <div class="section-header" onclick="toggleSection('imenTableSection')">
+        <h2>이멘마하</h2>
+      </div>
+      <div id="imenTableSection" class="section-content">
+      <table id="imenTable" class="trade-table">
+        <thead>
+          <tr>
+            <th>NPC</th><th>교환 아이템</th><th>개수</th><th>요구 재료</th><th>재료 개수</th><th>교환 횟수</th><th>총 요구 재료</th><th>체크</th>
+          </tr>
+        </thead>
+          <tbody>
+            <tr><td>아르미스</td><td>튼튼한 밧줄</td><td>1</td><td>분해된 장비 부품</td><td>1000</td><td>1</td><td>1000</td><td><input type="checkbox" /></td></tr>
+            <tr><td>엘레노아</td><td>최상급 옷감+</td><td>1</td><td>녹차 크레이프 케이크</td><td>2</td><td>2</td><td>4</td><td><input type="checkbox" /></td></tr>
+            <tr><td rowspan="2">델렌</td><td>최상급 가죽+</td><td>1</td><td>호박 수프</td><td>2</td><td>2</td><td>4</td><td><input type="checkbox" /></td></tr>
+            <tr><td>최상급 목재+</td><td>1</td><td>호박 수프</td><td>2</td><td>2</td><td>4</td><td><input type="checkbox" /></td></tr>
+            <tr><td rowspan="5">델</td><td>화살꽃</td><td>10</td><td>파란 수국</td><td>10</td><td>3</td><td>30</td><td><input type="checkbox" /></td></tr>
+            <tr><td>숨숨꽃</td><td>10</td><td>파란 수국</td><td>10</td><td>3</td><td>30</td><td><input type="checkbox" /></td></tr>
+            <tr><td>생채기꽃</td><td>10</td><td>파란 수국</td><td>10</td><td>3</td><td>30</td><td><input type="checkbox" /></td></tr>
+            <tr><td>진정초</td><td>10</td><td>파란 수국</td><td>10</td><td>3</td><td>30</td><td><input type="checkbox" /></td></tr>
+            <tr><td>선물용 꽃다발</td><td>1</td><td>점토</td><td>100</td><td>1</td><td>100</td><td><input type="checkbox" /></td></tr>
+            <tr><td rowspan="2">고든</td><td>밀가루</td><td>10</td><td>쌀</td><td>30</td><td>5</td><td>150</td><td><input type="checkbox" /></td></tr>
+            <tr><td>묵직한 감자</td><td>5</td><td>발효된 찻잎</td><td>10</td><td>1</td><td>10</td><td><input type="checkbox" /></td></tr>
+            <tr><td rowspan="2">오슬라</td><td>철괴</td><td>5</td><td>카레라이스</td><td>1</td><td>2</td><td>2</td><td><input type="checkbox" /></td></tr>
+            <tr><td>운철괴</td><td>1</td><td>카레라이스</td><td>2</td><td>2</td><td>4</td><td><input type="checkbox" /></td></tr>
+            <tr><td rowspan="2">도나</td><td>성수 묶음 상자</td><td>1</td><td>호박 파이</td><td>3</td><td>1</td><td>3</td><td><input type="checkbox" /></td></tr>
+            <tr><td>성수</td><td>1</td><td>선물용 꽃다발</td><td>1</td><td>1</td><td>1</td><td><input type="checkbox" /></td></tr>
+            <tr><td rowspan="5">크레이그</td><td>최상급 내열 붕대</td><td>3</td><td>금은 매운탕</td><td>1</td><td>1</td><td>1</td><td><input type="checkbox" /></td></tr>
+            <tr><td>최상급 방한 붕대</td><td>3</td><td>금은 매운탕</td><td>1</td><td>1</td><td>1</td><td><input type="checkbox" /></td></tr>
+            <tr><td>최상급 절연 붕대</td><td>3</td><td>금은 매운탕</td><td>1</td><td>1</td><td>1</td><td><input type="checkbox" /></td></tr>
+            <tr><td>최상급 축복의 붕대</td><td>3</td><td>금은 매운탕</td><td>1</td><td>1</td><td>1</td><td><input type="checkbox" /></td></tr>
+            <tr><td>최상급 봉인의 붕대</td><td>3</td><td>금은 매운탕</td><td>1</td><td>1</td><td>1</td><td><input type="checkbox" /></td></tr>
+          </tbody>
+      </table>
+    </div>
+    </div>
+
   <script src="script.js"></script>
 </body>
 </html>
