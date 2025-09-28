@@ -11,6 +11,34 @@
     <!-- ✅ 사이트 타이틀 -->
     <h1 class="site-title">마비노기 모바일 체크 리스트</h1>
 
+    <!-- ✅ 마비노기 목표 -->
+    <div class="section">
+      <div class="section-header">
+        <h2>📌 추천 목표</h2>
+        <button class="reset-btn" onclick="resetChecklist('mabiTodoTable');">♻️</button>
+      </div>
+      <table id="mabiTodoTable" class="trade-table">
+        <thead>
+          <tr>
+            <th>목표</th>
+            <th>체크</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>전설 펫 맞추기</td><td><input type="checkbox" /> 전설 펫</td></tr>
+          <tr>
+            <td>전설 아바타 맞추기</td>
+            <td>
+              <label><input type="checkbox"> 모자</label>
+              <label><input type="checkbox"> 상의</label>
+              <label><input type="checkbox"> 장갑</label>
+              <label><input type="checkbox"> 신발</label>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
     <!-- ✅ 일일 할일 -->
     <div class="section">
       <div class="section-header">
@@ -41,38 +69,82 @@
       </table>
     </div>
 
-    <!-- ✅ 마비노기 목표 -->
+    <!-- ✅ 주간 할일 -->
     <div class="section">
       <div class="section-header">
-        <h2>📌 추천 목표</h2>
-        <button class="reset-btn" onclick="resetChecklist('mabiTodoTable');">♻️</button>
+        <h2>📌 주간 체크 리스트</h2>
+        <button class="reset-btn" onclick="resetChecklist('weeklyTodoTable');">♻️</button>
       </div>
-      <table id="mabiTodoTable" class="trade-table">
+      <table id="weeklyTodoTable" class="trade-table">
         <thead>
           <tr>
-            <th>목표</th>
+            <th>주간</th>
             <th>체크</th>
           </tr>
         </thead>
         <tbody>
-          <tr><td>전설 펫 맞추기</td><td><input type="checkbox" /></td></tr>
           <tr>
-            <td>전설 아바타 맞추기</td>
+            <td>검은 구멍</td>
             <td>
-              <label><input type="checkbox"> 모자</label>
-              <label><input type="checkbox"> 상의</label>
-              <label><input type="checkbox"> 장갑</label>
-              <label><input type="checkbox"> 신발</label>
+              <label><input type="checkbox"> </label>
+              <label><input type="checkbox"> </label>
+              <label><input type="checkbox"> </label>
+              <label><input type="checkbox"> </label>
+              <label><input type="checkbox"> </label>
+              <label><input type="checkbox"> </label>
+              <label><input type="checkbox">　7회</label><br>
+              <label><input type="checkbox"> </label>
+              <label><input type="checkbox"> </label>
+              <label><input type="checkbox"> </label>
+              <label><input type="checkbox"> </label>
+              <label><input type="checkbox"> </label>
+              <label><input type="checkbox"> </label>
+              <label><input type="checkbox"> 14회</label>
+            </td>
+          </tr>
+          <tr>
+            <td>소환의 결계</td>
+            <td>
+              <label><input type="checkbox"> 1회</label>
+              <label><input type="checkbox"> 2회</label>
+              <label><input type="checkbox"> 3회</label>
+              <label><input type="checkbox"> 4회</label>
+              <label><input type="checkbox"> 5회</label>
+              <label><input type="checkbox"> 6회</label>
+              <label><input type="checkbox"> 7회</label>
+            </td>
+          </tr>
+          <tr>
+            <td>필드 보스</td>
+            <td>
+              <label><input type="checkbox"> 1회</label>
+              <label><input type="checkbox"> 2회</label>
+              <label><input type="checkbox"> 3회</label>
+            </td>
+          </tr>
+          <tr>
+            <td>어비스 던전</td>
+            <td>
+              <label><input type="checkbox"> 1회</label>
+              <label><input type="checkbox"> 2회</label>
+              <label><input type="checkbox"> 3회</label>
+            </td>
+          </tr>
+          <tr>
+            <td>레이드</td>
+            <td>
+              <label><input type="checkbox"> 글라스기브넨</label> <br>
+              <label><input type="checkbox"> 화이트 서큐버스</label>
             </td>
           </tr>
         </tbody>
       </table>
     </div>
 
-    <!-- ✅ 일일 물물 교환 리스트 -->
+    <!-- ✅ 물물 교환 리스트 -->
     <div class="section">
       <div class="section-header" onclick="toggleAllSections()">
-        <h2>💱 일일 물물 교환 리스트</h2>
+        <h2>💱 물물 교환 리스트</h2>
         <button class="reset-btn" onclick="resetAll(); event.stopPropagation();">♻️</button>
       </div>
 
