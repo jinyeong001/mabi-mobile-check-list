@@ -8,14 +8,45 @@
 <body>
   <div class="container">
 
-    <!-- ✅ 상단 제목 + 전체 리셋 버튼 -->
-    <div class="section-header" onclick="toggleAllSections()">
-      <h2>💱 일일 물물 교환 리스트</h2>
-      <button class="reset-btn" onclick="resetAll(); event.stopPropagation();">🔄</button>
+    <!-- ✅ 일일 할일 -->
+    <div class="section">
+      <div class="section-header">
+        <h2>📌 일일 할일</h2>
+        <button class="reset-btn" onclick="resetChecklist('dailyTodoTable');">🔄</button>
+      </div>
+      <table id="dailyTodoTable" class="trade-table">
+        <thead>
+          <tr>
+            <th>할일</th>
+            <th>체크</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>캐시샵 : 은동전 상자 구매</td><td><input type="checkbox" /></td></tr>
+          <tr><td>캐시샵 : 무료 상품 구매</td><td><input type="checkbox" /></td></tr>
+          <tr><td>요일 던전</td><td><input type="checkbox" /></td></tr>
+          <tr><td>일일 아르바이트</td><td><input type="checkbox" /></td></tr>
+          <tr>
+            <td>김치향 괴롭히기</td>
+            <td>
+              <label><input type="checkbox"> 1회</label>
+              <label><input type="checkbox"> 2회</label>
+              <label><input type="checkbox"> 3회</label>
+            </td>
+          </tr>
+        </tbody>
+      </table>
     </div>
 
-    <!-- ✅ 티르코네일 -->
+    <!-- ✅ 일일 물물 교환 리스트 -->
     <div class="section">
+      <div class="section-header" onclick="toggleAllSections()">
+        <h2>💱 일일 물물 교환 리스트</h2>
+        <button class="reset-btn" onclick="resetAll(); event.stopPropagation();">🔄</button>
+      </div>
+
+    <!-- ✅ 티르코네일 -->
+    <div class="subsection">
       <div class="section-header" onclick="toggleSection('tirTableSection')">
         <h2>티르코네일</h2>
       </div>
@@ -55,7 +86,7 @@
     </div>
 
     <!-- ✅ 던바튼 -->
-    <div class="section">
+    <div class="subsection">
       <div class="section-header" onclick="toggleSection('dunbartonTableSection')">
         <h2>던바튼</h2>
       </div>
@@ -102,7 +133,7 @@
     </div>
 
     <!-- ✅ 콜헨 -->
-    <div class="section">
+    <div class="subsection">
       <div class="section-header" onclick="toggleSection('colhenTableSection')">
         <h2>콜헨</h2>
       </div>
@@ -135,7 +166,7 @@
     </div>
 
     <!-- ✅ 반호르 -->
-    <div class="section">
+    <div class="subsection">
       <div class="section-header" onclick="toggleSection('banhornTableSection')">
         <h2>반호르</h2>
       </div>
@@ -163,7 +194,7 @@
     </div>
     
     <!-- ✅ 이멘마하 -->
-    <div class="section">
+    <div class="subsection">
       <div class="section-header" onclick="toggleSection('imenTableSection')">
         <h2>이멘마하</h2>
       </div>
