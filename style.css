@@ -1,32 +1,73 @@
 body {
-  font-family: Arial, sans-serif;
-  max-width: 800px;
-  margin: auto;
+  font-family: 'Noto Sans KR', sans-serif;
+  background: #1e1e2f;
+  color: #fff;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 900px;
+  margin: 50px auto;
   padding: 20px;
-  background: #f9f9f9;
+  background: linear-gradient(135deg, #3b3b5e, #1e1e2f);
+  border-radius: 25px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.5);
 }
 
-details {
-  background: #fff;
-  border: 1px solid #ddd;
-  border-radius: 6px;
-  padding: 10px 15px;
-  margin-bottom: 15px;
+h1 {
+  text-align: center;
+  margin-bottom: 5px;
 }
 
-summary {
-  font-weight: bold;
+.subtitle {
+  text-align: center;
+  font-size: 0.9rem;
+  color: #bbb;
+  margin-bottom: 30px;
+}
+
+.checklist-section {
+  margin-bottom: 30px;
+  background: rgba(255,255,255,0.05);
+  border-radius: 15px;
+  padding: 15px;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.reset-btn {
+  background: #ff5e57;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 8px;
+  color: #fff;
   cursor: pointer;
+}
+
+.reset-btn:hover {
+  background: #ff3b30;
+}
+
+details summary {
+  cursor: pointer;
+  font-weight: bold;
+  margin-bottom: 10px;
 }
 
 table {
   width: 100%;
   border-collapse: collapse;
+  margin-top: 10px;
 }
 
 th, td {
-  border: 1px solid #ccc;
-  padding: 5px;
+  border: 1px solid #555;
+  padding: 8px;
   text-align: center;
 }
 
