@@ -35,6 +35,10 @@ function resetAll() {
   });
 }
 
+function resetChecklistGroup(tableIds) {
+  tableIds.forEach(id => resetChecklist(id));
+}
+
 
 function toggleSection(id) {
   const section = document.getElementById(id);
