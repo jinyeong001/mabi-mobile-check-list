@@ -113,4 +113,3 @@ document.addEventListener('DOMContentLoaded', () => {
     localStorage.setItem('weeklyResetTime', new Date().toISOString());
   }
 });
-
