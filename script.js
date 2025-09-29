@@ -18,7 +18,6 @@ function loadChecklist(tableId) {
   });
 }
 
-
 function resetChecklist(tableId) {
   const table = document.getElementById(tableId);
   const checkboxes = table.querySelectorAll('input[type="checkbox"]');
@@ -39,7 +38,6 @@ function resetChecklistGroup(tableIds) {
   tableIds.forEach(id => resetChecklist(id));
 }
 
-
 function toggleSection(id) {
   const section = document.getElementById(id);
   section.style.display = section.style.display === 'none' ? 'block' : 'none';
@@ -47,6 +45,15 @@ function toggleSection(id) {
 
 function toggleAllSections() {
   const sections = document.querySelectorAll('.section-content');
+  const allOpen = Array.from(sections).every(section => section.style.display === 'block');
+
+  sections.forEach(section => {
+    section.style.display = allOpen ? 'none' : 'block';
+  });
+}
+
+function toggleGroupSections(groupClass) {
+  const sections = document.querySelectorAll(`.${groupClass} .section-content`);
   const allOpen = Array.from(sections).every(section => section.style.display === 'block');
 
   sections.forEach(section => {
@@ -66,8 +73,44 @@ function updateRowHighlight(tableId) {
   });
 }
 
+function shouldResetDaily() {
+  const now = new Date();
+  const lastReset = localStorage.getItem('dailyResetTime');
+  const today6am = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 6, 0, 0);
+
+  return !lastReset || now > today6am && new Date(lastReset) < today6am;
+}
+
+function shouldResetWeekly() {
+  const now = new Date();
+  const lastReset = localStorage.getItem('weeklyResetTime');
+  const today6am = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 6, 0, 0);
+
+  const isMonday = now.getDay() === 1; // 0: Sunday, 1: Monday
+  const lastResetDate = lastReset ? new Date(lastReset) : null;
+
+  return isMonday && (!lastReset || lastResetDate.getDate() !== now.getDate());
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('table').forEach(table => {
     loadChecklist(table.id);
   });
+
+  if (shouldResetDaily()) {
+    resetChecklistGroup([
+      'dailyTodoTable',
+      'tirTable','dunbartonTable','colhenTable','banhornTable','imenTable','exTable'
+    ]);
+    localStorage.setItem('dailyResetTime', new Date().toISOString());
+  }
+
+  if (shouldResetWeekly()) {
+    resetChecklistGroup([
+      'weeklyTodoTable',
+      'weeklyBanhornTable','weeklyImenTableSection'
+    ]);
+    localStorage.setItem('weeklyResetTime', new Date().toISOString());
+  }
 });
+
