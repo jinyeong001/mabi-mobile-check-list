@@ -8,10 +8,10 @@
 <body>
   <div class="container">
 
-    <!-- ✅ 사이트 타이틀 -->
+    <!-- 사이트 타이틀 -->
     <h1 class="site-title">마비노기 모바일 체크 리스트</h1>
 
-    <!-- ✅ 마비노기 목표 -->
+    <!-- 마비노기 목표 -->
     <div class="section">
       <div class="section-header">
         <h2>📌 추천 목표</h2>
@@ -39,7 +39,7 @@
       </table>
     </div>
 
-    <!-- ✅ 일일 할일 -->
+    <!-- 일일 할일 -->
     <div class="section">
       <div class="section-header">
         <h2>📌 일일 체크 리스트</h2>
@@ -71,7 +71,7 @@
       </table>
     </div>
 
-    <!-- ✅ 주간 할일 -->
+    <!-- 주간 할일 -->
     <div class="section">
       <div class="section-header">
         <h2>📌 주간 체크 리스트</h2>
@@ -144,14 +144,14 @@
       </table>
     </div>
 
-    <!-- ✅ 일일 교환 리스트 -->
-    <div class="section">
-      <div class="section-header" onclick="toggleAllSections()">
+    <!-- 일일 교환 리스트 -->
+    <div class="section daily-group">
+      <div class="section-header" onclick="toggleGroupSections('daily-group')">
         <h2>💱 일일 물물 교환 리스트</h2>
         <button class="reset-btn" onclick="resetChecklistGroup(['tirTable','dunbartonTable','colhenTable','banhornTable','imenTable','exTable']); event.stopPropagation();">♻️</button>
       </div>
 
-      <!-- ✅ 티르코네일 -->
+      <!-- 티르코네일 -->
       <div class="subsection">
         <div class="section-header" onclick="toggleSection('tirTableSection')">
           <h2>티르코네일</h2>
@@ -190,7 +190,7 @@
         </div>
       </div>
 
-      <!-- ✅ 일일 던바튼 -->
+      <!-- 일일 던바튼 -->
       <div class="subsection">
         <div class="section-header" onclick="toggleSection('dunbartonTableSection')">
           <h2>던바튼</h2>
@@ -238,7 +238,7 @@
       </div>
       </div>
 
-      <!-- ✅ 일일 콜헨 -->
+      <!-- 일일 콜헨 -->
       <div class="subsection">
         <div class="section-header" onclick="toggleSection('colhenTableSection')">
           <h2>콜헨</h2>
@@ -271,7 +271,7 @@
       </div>
       </div>
 
-      <!-- ✅ 일일 반호르 -->
+      <!-- 일일 반호르 -->
       <div class="subsection">
         <div class="section-header" onclick="toggleSection('banhornTableSection')">
           <h2>반호르</h2>
@@ -298,7 +298,7 @@
       </div>
       </div>
       
-      <!-- ✅ 일일 이멘마하 -->
+      <!-- 일일 이멘마하 -->
       <div class="subsection">
         <div class="section-header" onclick="toggleSection('imenTableSection')">
           <h2>이멘마하</h2>
@@ -326,7 +326,7 @@
       </div>
       </div>
     
-      <!-- ✅ 일일 사냥터 -->
+      <!-- 일일 사냥터 -->
       <div class="subsection">
         <div class="section-header" onclick="toggleSection('exTableSection')">
           <h2>사냥터</h2>
@@ -385,14 +385,14 @@
       </div>
     </div>
 
-    <!-- ✅ 주간 교환 리스트 -->
-    <div class="section">
-      <div class="section-header" onclick="toggleAllSections()">
+    <!-- 주간 교환 리스트 -->
+    <div class="section weekly-group">
+      <div class="section-header" onclick="toggleGroupSections('weekly-group')">
         <h2>💱 주간 물물 교환 리스트</h2>
-        <button class="reset-btn" onclick="resetChecklistGroup(['weeklyBanhornTableSection','weeklyImenTable']); event.stopPropagation();">♻️</button>
+        <button class="reset-btn" onclick="resetChecklistGroup(['weeklyBanhornTable','weeklyImenTableSection']); event.stopPropagation();">♻️</button>
       </div>
 
-      <!-- ✅ 주간 반호르 -->
+      <!-- 주간 반호르 -->
       <div class="subsection">
         <div class="section-header" onclick="toggleSection('weeklyBanhornTableSection')">
           <h2>반호르</h2>
@@ -405,15 +405,13 @@
             </tr>
           </thead>
             <tbody>
-              <tbody>
-                <tr><td>아이데른</td><td>은합금괴</td><td>10</td><td>농어 매운탕</td><td>1</td><td>1</td><td>1</td><td><input type="checkbox" /></td></tr>
-              </tbody>
+              <tr><td>아이데른</td><td>은합금괴</td><td>10</td><td>농어 매운탕</td><td>1</td><td>1</td><td>1</td><td><input type="checkbox" /></td></tr>
             </tbody>
         </table>
       </div>
       </div>
       
-      <!-- ✅ 주간 이멘마하 -->
+      <!-- 주간 이멘마하 -->
       <div class="subsection">
         <div class="section-header" onclick="toggleSection('weeklyImenTableSection')">
           <h2>이멘마하</h2>
