@@ -151,7 +151,7 @@
         <button class="reset-btn" onclick="resetChecklistGroup(['tirTable','dunbartonTable','colhenTable','banhornTable','imenTable','exTable']); event.stopPropagation();">♻️</button>
       </div>
 
-      <!-- 티르코네일 -->
+      <!-- 일일 티르코네일 -->
       <div class="subsection">
         <div class="section-header" onclick="toggleSection('tirTableSection')">
           <h2>티르코네일</h2>
@@ -389,7 +389,78 @@
     <div class="section weekly-group">
       <div class="section-header" onclick="toggleGroupSections('weekly-group')">
         <h2>💱 주간 물물 교환 리스트</h2>
-        <button class="reset-btn" onclick="resetChecklistGroup(['weeklyBanhornTable','weeklyImenTableSection']); event.stopPropagation();">♻️</button>
+        <button class="reset-btn" onclick="resetChecklistGroup(['weeklyTirTable','weeklyDunbartonTable','weeklyColhenTable','weeklyBanhornTable','weeklyImenTable']); event.stopPropagation();">♻️</button>
+      </div>
+
+      <!-- 주간 티르코네일 -->
+      <div class="subsection">
+        <div class="section-header" onclick="toggleSection('weeklyTirTableSection')">
+          <h2>티르코네일</h2>
+        </div>
+        <div id="weeklyTirTableSection" class="section-content">
+            <table id="weeklyTirTable" class="trade-table">
+              <thead>
+                <tr>
+                  <th>NPC</th><th>교환 아이템</th><th>개수</th><th>요구 재료</th><th>재료 개수</th><th>교환 횟수</th><th>총 요구 재료</th><th>체크</th>
+                </tr>
+              </thead>
+                <tbody>
+                  <tr><td rowspan="4">케이틴</td><td>고기</td><td>1</td><td>250 골드</td><td>1</td><td>30</td><td>7,500 골드</td><td><input type="checkbox" /></td></tr>
+                  <tr><td>소금</td><td>1</td><td>1,00 골드</td><td>1</td><td>30</td><td>30,000 골드</td><td><input type="checkbox" /></td></tr>
+                  <tr><td>설탕</td><td>1</td><td>1,200 골드</td><td>1</td><td>30</td><td>36,000 골드</td><td><input type="checkbox" /></td></tr>
+                  <tr><td>식용유</td><td>1</td><td>1,200 골드</td><td>1</td><td>30</td><td>36,000 골드</td><td><input type="checkbox" /></td></tr>
+                </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- 주간 던바튼 -->
+      <div class="subsection">
+        <div class="section-header" onclick="toggleSection('weeklyDunbartonTableSection')">
+          <h2>던바튼</h2>
+        </div>
+        <div id="weeklyDunbartonTableSection" class="section-content">
+        <table id="weeklyDunbartonTable" class="trade-table">
+          <thead>
+            <tr>
+              <th>NPC</th><th>교환 아이템</th><th>개수</th><th>요구 재료</th><th>재료 개수</th><th>교환 횟수</th><th>총 요구 재료</th><th>체크</th>
+            </tr>
+          </thead>
+            <tbody>
+              <tr><td rowspan="10">글리니스</td><td>고기</td><td>1</td><td>250 골드</td><td>1</td><td>30</td><td>7,500 골드</td><td><input type="checkbox" /></td></tr>
+              <tr><td>소금</td><td>1</td><td>1,000 골드</td><td>1</td><td>30</td><td>30,000 골드</td><td><input type="checkbox" /></td></tr>
+              <tr><td>설탕</td><td>1</td><td>1,200 골드</td><td>1</td><td>30</td><td>36,000 골드</td><td><input type="checkbox" /></td></tr>
+              <tr><td>식용유</td><td>1</td><td>1,200 골드</td><td>1</td><td>30</td><td>36,000 골드</td><td><input type="checkbox" /></td></tr>
+              <tr><td>마늘</td><td>1</td><td>1,200 골드</td><td>1</td><td>30</td><td>36,000 골드</td><td><input type="checkbox" /></td></tr>
+              <tr><td>후추</td><td>1</td><td>2,000 골드</td><td>1</td><td>30</td><td>60,000 골드</td><td><input type="checkbox" /></td></tr>
+              <tr><td>레몬</td><td>1</td><td>3,000 골드</td><td>1</td><td>30</td><td>90,000 골드</td><td><input type="checkbox" /></td></tr>
+              <tr><td>토마토</td><td>1</td><td>6,800 골드</td><td>1</td><td>30</td><td>204,000 골드</td><td><input type="checkbox" /></td></tr>
+              <tr><td>아스파라거스</td><td>1</td><td>10,000 골드</td><td>1</td><td>30</td><td>300,000 골드</td><td><input type="checkbox" /></td></tr>
+              <tr><td>완두콩</td><td>1</td><td>10,000 골드</td><td>1</td><td>30</td><td>300,000 골드</td><td><input type="checkbox" /></td></tr></tr>
+            </tbody>
+        </table>
+      </div>
+      </div>
+
+      <!-- 일일 콜헨 -->
+      <div class="subsection">
+        <div class="section-header" onclick="toggleSection('weeklyColhenTableSection')">
+          <h2>콜헨</h2>
+        </div>
+        <div id="weeklyColhenTableSection" class="section-content">
+        <table id="weeklyColhenTable" class="trade-table">
+          <thead>
+            <tr>
+              <th>NPC</th><th>교환 아이템</th><th>개수</th><th>요구 재료</th><th>재료 개수</th><th>교환 횟수</th><th>총 요구 재료</th><th>체크</th>
+            </tr>
+          </thead>
+            <tbody>
+              <tr><td rowspan="3">코너</td><td>딸기</td><td>1</td><td>1,200 골드</td><td>1</td><td>30</td><td>36,000 골드</td><td><input type="checkbox" /></td></tr>
+              <tr><td>아스파라거스</td><td>1</td><td>10,000 골드</td><td>1</td><td>30</td><td>300,000 골드</td><td><input type="checkbox" /></td></tr>
+              <tr><td>완두콩</td><td>1</td><td>10,000 골드</td><td>1</td><td>30</td><td>300,000 골드</td><td><input type="checkbox" /></td></tr>
+            </tbody>
+        </table>
+      </div>
       </div>
 
       <!-- 주간 반호르 -->
@@ -406,6 +477,14 @@
           </thead>
             <tbody>
               <tr><td>아이데른</td><td>은합금괴</td><td>10</td><td>농어 매운탕</td><td>1</td><td>1</td><td>1</td><td><input type="checkbox" /></td></tr>
+              <tr><td rowspan="8">제니퍼</td><td>고기</td><td>1</td><td>250 골드</td><td>1</td><td>30</td><td>7,500 골드</td><td><input type="checkbox" /></td></tr>
+              <tr><td>담백한 고기</td><td>1</td><td>400 골드</td><td>1</td><td>30</td><td>12,000 골드</td><td><input type="checkbox" /></td></tr>
+              <tr><td>조개</td><td>1</td><td>600 골드</td><td>1</td><td>30</td><td>18,000 골드</td><td><input type="checkbox" /></td></tr>
+              <tr><td>소금</td><td>1</td><td>1,000 골드</td><td>1</td><td>30</td><td>30,000 골드</td><td><input type="checkbox" /></td></tr>
+              <tr><td>고춧가루</td><td>1</td><td>3,000 골드</td><td>1</td><td>30</td><td>90,000 골드</td><td><input type="checkbox" /></td></tr>
+              <tr><td>마늘</td><td>1</td><td>1,200 골드</td><td>1</td><td>30</td><td>36,000 골드</td><td><input type="checkbox" /></td></tr>
+              <tr><td>레몬</td><td>1</td><td>3,000 골드</td><td>1</td><td>30</td><td>90,000 골드</td><td><input type="checkbox" /></td></tr>
+              <tr><td>무</td><td>1</td><td>10,000 골드</td><td>1</td><td>30</td><td>300,000 골드</td><td><input type="checkbox" /></td></tr>
             </tbody>
         </table>
       </div>
@@ -429,18 +508,32 @@
               <tr><td rowspan="3">델렌</td><td>최상급 가죽+</td><td>1</td><td>호박 수프</td><td>2</td><td>2</td><td>4</td><td><input type="checkbox" /></td></tr>
               <tr><td>최상급 목재+</td><td>1</td><td>호박 수프</td><td>2</td><td>2</td><td>4</td><td><input type="checkbox" /></td></tr>
               <tr><td>최상급 생가죽</td><td>1</td><td>1,400 골드</td><td>1</td><td>30</td><td>52,000 골드</td><td><input type="checkbox" /></td></tr>
-              <tr><td rowspan="3">고든</td><td>밀가루</td><td>10</td><td>쌀</td><td>30</td><td>5</td><td>150</td><td><input type="checkbox" /></td></tr>
+              <tr><td rowspan="10">고든</td><td>밀가루</td><td>10</td><td>쌀</td><td>30</td><td>5</td><td>150</td><td><input type="checkbox" /></td></tr>
               <tr><td>묵직한 감자</td><td>5</td><td>발효된 찻잎</td><td>10</td><td>1</td><td>10</td><td><input type="checkbox" /></td></tr>
+              <tr><td>담백한 고기</td><td>1</td><td>400 골드</td><td>1</td><td>30</td><td>12,000 골드</td><td><input type="checkbox" /></td></tr>
+              <tr><td>마늘</td><td>1</td><td>1,200 골드</td><td>1</td><td>30</td><td>36,000 골드</td><td><input type="checkbox" /></td></tr>
+              <tr><td>딸기</td><td>1</td><td>1,200 골드</td><td>1</td><td>30</td><td>36,000 골드</td><td><input type="checkbox" /></td></tr>
+              <tr><td>레몬</td><td>1</td><td>3,000 골드</td><td>1</td><td>30</td><td>90,000 골드</td><td><input type="checkbox" /></td></tr>
+              <tr><td>당근</td><td>1</td><td>4,200 골드</td><td>1</td><td>30</td><td>126,000 골드</td><td><input type="checkbox" /></td></tr>
+              <tr><td>토마토</td><td>1</td><td>6,800 골드</td><td>1</td><td>30</td><td>204,000 골드</td><td><input type="checkbox" /></td></tr>
               <tr><td>생강</td><td>1</td><td>7,300 골드</td><td>1</td><td>30</td><td>219,000 골드</td><td><input type="checkbox" /></td></tr>
+              <tr><td>무</td><td>1</td><td>10,000 골드</td><td>1</td><td>30</td><td>300,000 골드</td><td><input type="checkbox" /></td></tr>
               <tr><td rowspan="2">오슬라</td><td>철괴</td><td>5</td><td>카레라이스</td><td>1</td><td>2</td><td>2</td><td><input type="checkbox" /></td></tr>
               <tr><td>운철괴</td><td>1</td><td>카레라이스</td><td>2</td><td>2</td><td>4</td><td><input type="checkbox" /></td></tr>
               <tr><td rowspan="2">도나</td><td>성수 묶음 상자</td><td>1</td><td>호박 파이</td><td>3</td><td>1</td><td>3</td><td><input type="checkbox" /></td></tr>
               <tr><td>성수</td><td>1</td><td>선물용 꽃다발</td><td>1</td><td>1</td><td>1</td><td><input type="checkbox" /></td></tr>
+              <tr><td rowspan="8">프레이저</td><td>밀가루</td><td>1</td><td>600 골드</td><td>1</td><td>30</td><td>18,000 골드</td><td><input type="checkbox" /></td></tr>
+              <tr><td>생크리</td><td>1</td><td>1,100 골드</td><td>1</td><td>30</td><td>33,000 골드</td><td><input type="checkbox" /></td></tr>
+              <tr><td>소금</td><td>1</td><td>1,000 골드</td><td>1</td><td>30</td><td>30,000 골드</td><td><input type="checkbox" /></td></tr>
+              <tr><td>설탕</td><td>1</td><td>1,200 골드</td><td>1</td><td>30</td><td>36,000 골드</td><td><input type="checkbox" /></td></tr>
+              <tr><td>식용유</td><td>1</td><td>1,200 골드</td><td>1</td><td>30</td><td>36,000 골드</td><td><input type="checkbox" /></td></tr>
+              <tr><td>후추</td><td>1</td><td>2,000 골드</td><td>1</td><td>30</td><td>60,000 골드</td><td><input type="checkbox" /></td></tr>
+              <tr><td>고춧가루</td><td>1</td><td>3,000 골드</td><td>1</td><td>30</td><td>90,000 골드</td><td><input type="checkbox" /></td></tr>
+              <tr><td>카레 가루</td><td>1</td><td>3,500 골드</td><td>1</td><td>30</td><td>105,000 골드</td><td><input type="checkbox" /></td></tr>
             </tbody>
         </table>
       </div>
       </div>
-
 
   <footer class="page-footer">
   Made by 진영씨 (알리사 서버 · 일탈 길드)
